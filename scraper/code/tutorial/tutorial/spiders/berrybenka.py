@@ -22,18 +22,20 @@ class BerrybenkaSpider(scrapy.Spider):
         """
         detail_links = response.xpath('//a[@class="catalog-img"]/@href').extract()
 
+        detail_exists = False
+
         for link in detail_links:
+            detail_exists = True
             yield SplashRequest(link, self.parse_item,
                 endpoint='render.html',
                 args={'wait': 0.5},
             )
 
+        if not detail_exists:
+            return
+
         """
         Horizontal crawl
-        Mulai dari /0
-        Cek apakh ada link 'Next'
-        Kalo tidak ada maka berhenti
-        kalo ada maka tambahkan 48 jadi /sebelumnya+48 untuk url baru yg di scrape
         """
         next_page = response.xpath('//li[@class="next right"]')
         self.page_index += 1
@@ -57,6 +59,5 @@ class BerrybenkaSpider(scrapy.Spider):
         images = [response.xpath('//div[@class="detail-photo left"]/div[@class="big-photo left"]/a/img/@src').extract()]
 
         item['image_urls'] = images[0] + response.xpath('//div[@class="detail-photo left"]/div[@class="small-photo left"]/ul/li/a/img/@src').extract()
-        item['source'] = 'berrybenka'
 
         return item

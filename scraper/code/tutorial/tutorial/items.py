@@ -15,4 +15,3 @@ class BerrybenkaItem(scrapy.Item):
     price = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
-    source = scrapy.Field()
