@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  splash:
+    image: "scrapinghub/splash"
+    restart: unless-stopped
+    expose:
+      - "5023"
+      - "8050"
+      - "8051"
+
+  scraper:
+    build: ./scraper
+    restart: unless-stopped
+    volumes:
+      - ./scraper/code:/code
+    depends_on:
+      - splash
+    tty: true
