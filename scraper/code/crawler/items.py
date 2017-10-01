@@ -7,11 +7,14 @@
 
 import scrapy
 
-class BerrybenkaItem(scrapy.Item):
+class Item(scrapy.Item):
     name = scrapy.Field()
     brand = scrapy.Field()
     description = scrapy.Field()
     url = scrapy.Field()
+    original_price = scrapy.Field()
     price = scrapy.Field()
     image_urls = scrapy.Field()
     images = scrapy.Field()
+    source = scrapy.Field()
+    sizes = scrapy.Field()
