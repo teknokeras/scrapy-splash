@@ -20,7 +20,7 @@ default_args = {
 }
 
 dag = DAG('starter_dag',
-    default_args=default_args, schedule_interval='@once')
+    default_args=default_args, schedule_interval='@daily')
 
 berrybenka = BashOperator(
     task_id='scrape_berrybenka_starter',
