@@ -46,5 +46,6 @@ class CompletenessPipeline(object):
 
         if not complete:
             self.exporter.export_item(item)
+            raise DropItem("Missing one or more element in %s" % item['url'])
 
         return item
