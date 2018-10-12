@@ -6,7 +6,7 @@ class ZaloraPipeline(object):
         temp_price = price[0]
         temp_price = temp_price.replace('SEKARANG','')
         temp_price = temp_price.replace('\n','').strip().replace('\xa0','')
-        temp_price = temp_price.replace('RP','').replace('.','')
+        temp_price = temp_price.replace('Rp','').replace('.','')
         temp_price = int(temp_price)
         return int(temp_price)
 
