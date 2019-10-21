@@ -71,7 +71,7 @@ Twisted==17.1.0
 Unidecode==0.4.20
 urllib3==1.21.1
 w3lib==1.17.0
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 WTForms==2.1
 zope.deprecation==4.2.0
 zope.interface==4.3.3
