@@ -35,7 +35,7 @@ lxml==3.7.3
 Mako==1.0.6
 Markdown==2.6.8
 MarkupSafe==1.0
-numpy==1.13.0
+numpy==1.22.0
 olefile==0.44
 ordereddict==1.1
 pandas==0.20.2
