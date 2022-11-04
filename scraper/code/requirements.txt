@@ -67,7 +67,7 @@ SQLAlchemy==1.1.11
 tabulate==0.7.7
 thrift==0.9.3
 treq==17.3.1
-Twisted==17.1.0
+Twisted==22.10.0
 Unidecode==0.4.20
 urllib3==1.21.1
 w3lib==1.17.0
